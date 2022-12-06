@@ -1,6 +1,7 @@
 const reviewModel = require("../models/reviewModel");
 const bookModel = require("../models/bookModel")
 const {isValidObjectId,isValid} = require("../validator/validation");
+const userModel = require("../models/userModel");
 
 const createReview = async function (req, res) {
     try {
@@ -132,6 +133,11 @@ const deleteReview = async function (req, res) {
         const filterReview = await reviewModel.findById(reviewId)
         if (!filterReview) { return res.status(404).send({ status: false, message: "No Review Is Present with this id" }) }
         if (filterReview.isDeleted == true) { return res.status(400).send({ status: false, message: "Review has already been deleted" }) }
+        
+        if (filterReview.bookId != bookId) {
+            return res.status(400).send({ status: false, message: "The review bookId is not same as path param book id" })
+        }
+
 
         const deleteReviewDetails = await reviewModel.findOneAndUpdate({ _id: reviewId }, { isDeleted: true, deletedAt: new Date() }, { new: true })
 
@@ -150,3 +156,20 @@ const deleteReview = async function (req, res) {
 module.exports.createReview = createReview;
 module.exports.updateReview = updateReview;
 module.exports.deleteReview = deleteReview;
+
+
+// const login = async function(req,res){
+//     try{
+
+//          let data= req.body
+
+//          const{email,password} = data;
+//        const token = jwt.sign({
+//         userId:finduser._id.toString()
+//        },
+//        "BookMangement",{expireIn:"1hr"})
+//     }
+//     catch(err){
+//         return res.status(500).send({message:err.message})
+//     }
+// }

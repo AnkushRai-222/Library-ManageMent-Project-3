@@ -14,10 +14,6 @@ const bookSchema = new mongoose.Schema({
         required : true,
         trim:true
     },
-    bookCover : {
-        type : String,
-        trim:true
-    },
     userId : {
         type : ObjectId,
         ref : "User",
@@ -53,6 +49,9 @@ const bookSchema = new mongoose.Schema({
     releasedAt : {
         type : Date,
         required : true
+    },
+    bookCover : {
+        type : String,
     }
  }, {timestamps: true})
 

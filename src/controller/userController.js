@@ -13,15 +13,13 @@ const createUser = async function(req,res){
          const {title,name,phone,email,password,address} = data;
 
           // Checking  titles
-
          if(!valid(title)){
             return res.status(400).send({status:false,message:"title is required"})
          }
          if(title != "Mr" && title !="Mrs" && title != "Miss"){
             return res.status(400).send({status:false,message:"title can only be Mr,Mrs,Miss"})
         }  
-          // Checking  name
-        
+          // Checking  name 
         if(!valid(name)){
             return res.status(400).send({status:false,message:"name is required"})
         }
