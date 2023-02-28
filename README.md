@@ -1,12 +1,8 @@
-# bookManagement-project-3
-# Lithium
+
+
 
 ## Project - Books Management
 
-### Key points
-- Create a group database `groupXDatabase`. You can clean the db you previously used and resue that.
-- This time each group should have a *single git branch*. Coordinate amongst yourselves by ensuring every next person pulls the code last pushed by a team mate. You branch will be checked as part of the demo. Branch name should follow the naming convention `project/booksManagementGroupX`
-- Follow the naming conventions exactly as instructed.
 
 ### Models
 - User Model
@@ -135,14 +131,6 @@
 - Make sure that only the owner of the books is able to create, edit or delete the book.
 - In case of unauthorized access return an appropirate error message.
 
-## Testing 
-- To test these apis create a new collection in Postman named Project 4 Books Management 
-- Each api should have a new request in this collection
-- Each request in the collection should be rightly named. Eg Create user, Create book, Get books etc
-- Each member of each team should have their tests in running state
-
-Refer below sample
- ![A Postman collection and request sample](assets/Postman-collection-sample.png)
 
 ## Response
 
