@@ -1,7 +1,7 @@
 
 
 
-## Project - Books Management
+## Project - Library Management
 
 
 ### Models
